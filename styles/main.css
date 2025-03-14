@@ -1,0 +1,245 @@
+/* ===== Variables ===== */
+:root {
+    --primary-color: #2d3436;
+    --secondary-color: #0984e3;
+    --accent-color: #00b894;
+    --text-color: #2d3436;
+    --bg-color: #ffffff;
+    --card-bg: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --primary-color: #dfe6e9;
+    --secondary-color: #74b9ff;
+    --accent-color: #55efc4;
+    --text-color: #dfe6e9;
+    --bg-color: #2d3436;
+    --card-bg: #404040;
+}
+
+/* ===== Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: var(--transition);
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ===== Header ===== */
+.header {
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.featured-carousel {
+    height: 400px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+/* ===== Content Grid ===== */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+.post-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.post-excerpt {
+    color: var(--text-color);
+    opacity: 0.9;
+    margin: 1rem 0;
+}
+
+/* ===== Newsletter CTA ===== */
+.newsletter-cta {
+    text-align: center;
+    padding: 4rem 0;
+    background: var(--secondary-color);
+    margin: 4rem 0;
+    border-radius: 15px;
+}
+
+.newsletter-cta h2 {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+#newsletter-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#newsletter-form input {
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    min-width: 300px;
+}
+
+#newsletter-form button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#newsletter-form button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+.footer {
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--card-bg);
+}
+
+.footer-content {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    display: block;
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.copyright {
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    #newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+}
